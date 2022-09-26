@@ -1,1 +1,67 @@
+/*!
+* Start Bootstrap - Resume v7.0.5 (https://startbootstrap.com/theme/resume)
+* Copyright 2013-2022 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
+*/
+//
+// Scripts
+// 
 
+
+const options = {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json',
+    },
+    };
+
+fetch('https://zg9d8pw9x0.execute-api.us-east-1.amazonaws.com/prod/crc', options)
+.then((response) => response.json())
+.then((responseJson) => {
+    document.getElementById("count-el").innerHTML = responseJson.vc;
+})
+
+/* // function counters() {
+
+    var visitCount = localStorage.getItem("page_view");
+    visitCount = 1;
+
+//Add entry for key="page_view"
+
+    localStorage.setItem("page_view", 1);
+
+    visitCount = Number(visitCount) + 1;
+
+// Update local storage value
+    localStorage.setItem("page_view", visitCount);
+
+    document.getElementById("count-el").innerHTML = visitCount;
+} */
+
+// counters()
+
+window.addEventListener('DOMContentLoaded', event => {
+
+    // Activate Bootstrap scrollspy on the main nav element
+    const sideNav = document.body.querySelector('#sideNav');
+    if (sideNav) {
+        new bootstrap.ScrollSpy(document.body, {
+            target: '#sideNav',
+            offset: 74,
+        });
+    };
+
+    // Collapse responsive navbar when toggler is visible
+    const navbarToggler = document.body.querySelector('.navbar-toggler');
+    const responsiveNavItems = [].slice.call(
+        document.querySelectorAll('#navbarResponsive .nav-link')
+    );
+    responsiveNavItems.map(function (responsiveNavItem) {
+        responsiveNavItem.addEventListener('click', () => {
+            if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                navbarToggler.click();
+            }
+        });
+    });
+
+});
