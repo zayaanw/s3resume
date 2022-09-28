@@ -21,25 +21,6 @@ fetch('https://zg9d8pw9x0.execute-api.us-east-1.amazonaws.com/prod/crc', options
     document.getElementById("count-el").innerHTML = responseJson.vc;
 })
 
-/* // function counters() {
-
-    var visitCount = localStorage.getItem("page_view");
-    visitCount = 1;
-
-//Add entry for key="page_view"
-
-    localStorage.setItem("page_view", 1);
-
-    visitCount = Number(visitCount) + 1;
-
-// Update local storage value
-    localStorage.setItem("page_view", visitCount);
-
-    document.getElementById("count-el").innerHTML = visitCount;
-} */
-
-// counters()
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Activate Bootstrap scrollspy on the main nav element
